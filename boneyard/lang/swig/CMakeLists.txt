@@ -13,7 +13,8 @@ SET(CMAKE_SWIG_FLAGS "")
 
 SET(LIBNIFALCON_INTERFACE libnifalcon_swig.i)
 SET_SOURCE_FILES_PROPERTIES(${LIBNIFALCON_INTERFACE} PROPERTIES CPLUSPLUS ON)
-INCLUDE_DIRECTORIES(../include)
+INCLUDE_DIRECTORIES(../../include ../include)
+ADD_DEFINITIONS(-std=c++11)
 
 ######################################################################################
 # Build function for Java library bindings

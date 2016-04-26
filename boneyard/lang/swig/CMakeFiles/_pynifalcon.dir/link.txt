@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -lnifalcon -shared -Wl,-soname,_pynifalcon.so -o _pynifalcon.so CMakeFiles/_pynifalcon.dir/libnifalcon_swigPYTHON_wrap.o CMakeFiles/_pynifalcon.dir/home/pi/libnifalcon/lang/src/FalconDeviceBridge.o -lpython3.4m 

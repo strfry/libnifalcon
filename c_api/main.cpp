@@ -168,8 +168,11 @@ void get_position(float* pos) {
 	
 
 extern "C"
-void set_force(float* forces)
+void set_force(float Fx, float Fy, float Fz)
 {
+#ifdef DEBUG
+	printf("set_force(%f, %f, %f)\n", Fx, Fy, Fz);
+#endif
 	/////////////////////////////////////////
 	//Inverse kinematics:
 	Angle angles;
@@ -192,7 +195,7 @@ void set_force(float* forces)
 	//Reset the forces:
 	
 	//gmtl::Vec3d force(0.0,0.0,0.0);
-	gmtl::Vec3d force(forces[0], forces[1], forces[2]);
+	gmtl::Vec3d force(Fx, Fy, Fz);
 	//printf("setforce %f %f %f\n", forces[0], forces[1], forces[2]);
 	
 	// memcopy pos to positions = 
@@ -204,7 +207,7 @@ void set_force(float* forces)
 	//Test shapes:
 	
 	//Room
-
+/*
 	if( offsetPos[0]<-0.03 )
 		force[0] = -(offsetPos[0]+0.03);
 	if( offsetPos[0]>0.03 )
@@ -218,7 +221,7 @@ void set_force(float* forces)
 	if( offsetPos[2]>0.02 )
 		force[2] = -(offsetPos[2]-0.02);
 		force *= 800.0;
-	
+*/
 
 	//Sphere
 
